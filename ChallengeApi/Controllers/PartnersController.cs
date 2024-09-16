@@ -15,14 +15,14 @@ public class PartnerController : ControllerBase
         _partnerService = partnerService;
     }
 
-    // GET: api/partner
+    
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Partner>>> GetPartners()
     {
         return Ok(await _partnerService.GetAllPartnersAsync());
     }
 
-    // GET: api/partner/5
+    
     [HttpGet("{id}")]
     public async Task<ActionResult<Partner>> GetPartner(int id)
     {
@@ -36,7 +36,7 @@ public class PartnerController : ControllerBase
         return Ok(partner);
     }
 
-    // POST: api/partner
+   
     [HttpPost]
     public async Task<ActionResult<Partner>> CreatePartner(Partner partner)
     {
@@ -50,7 +50,7 @@ public class PartnerController : ControllerBase
         return CreatedAtAction(nameof(GetPartner), new { id = partner.Id }, partner);
     }
 
-    // PUT: api/partner/5
+   
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdatePartner(int id, Partner partner)
     {
@@ -68,7 +68,7 @@ public class PartnerController : ControllerBase
         return NoContent();
     }
 
-    // DELETE: api/partner/5
+    
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeletePartner(int id)
     {

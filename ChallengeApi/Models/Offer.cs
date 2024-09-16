@@ -10,7 +10,6 @@ namespace ChallengeApi.Models
         public DateTime ValidTo { get; set; }
         public int PartnerId { get; set; }
 
-        // Remova a propriedade Partner
-        // public Partner Partner { get; set; }
+       
     }
 }
