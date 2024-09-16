@@ -1,10 +1,14 @@
 Integrantes do grupo
 
-Allesson Augusto (RM99533): Compliance & Quality Assurance
-Cauã Mongs (RM552178): Advanced Business Development with .NET
-Erik Teixeira (RM551377): Disruptive Architectures: IOT, IOB & Generative IA e Java Advanced
-Guilherme Naoki (RM551456): Mastering Relational and Non-Relational Database
-Leonardo Gonçalves (RM98912): DevOps Tools e Cloud Computing
+Allesson Augusto (RM99533): 
+
+Cauã Mongs (RM552178): 
+
+Erik Teixeira (RM551377): 
+
+Guilherme Naoki (RM551456): 
+
+Leonardo Gonçalves (RM98912): 
 
 Descrição da API: API de Parcerias Locais Objetivo: Gerenciar parcerias com estabelecimentos locais para oferecer ofertas especiais aos usuários. Funcionalidades: Cadastro e gerenciamento de parceiros (restaurantes, hotéis, atrações turísticas). Associar ofertas especiais a parceiros específicos. Consulta de ofertas disponíveis para um itinerário ou localização específica.
 
