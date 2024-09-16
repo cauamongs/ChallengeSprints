@@ -25,13 +25,44 @@ Exemplo POST no swagger:
 
 {
   "name": " ",
+  
   "type": " ",
+  
   "location": " ",
+  
   "offers": [
     {
       "description": " ",
+      
       "validFrom": "2024-09-10T00:00:00Z",
+      
       "validTo": "2024-12-31T23:59:59Z"
+    }
+  ]
+}
+
+
+Exemplo PUT (UPDATE) no swagger : 
+
+{
+  "id": 21,
+  
+  "name": "Merenda da Cidade",
+  
+  "type": "Restaurante",
+  
+  "location": "São Paulo",
+  
+  "offers": [
+    {
+      "id": 21,
+      "description": "Oferta de 10% no primeiro almoço",
+      
+      "validFrom": "2024-09-16T15:42:31.570Z",
+      
+      "validTo": "2024-09-16T15:42:31.570Z",
+      
+      "partnerId": 21
     }
   ]
 }
