@@ -15,14 +15,12 @@ public class PartnerController : ControllerBase
         _partnerService = partnerService;
     }
 
-    
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Partner>>> GetPartners()
     {
         return Ok(await _partnerService.GetAllPartnersAsync());
     }
 
-    
     [HttpGet("{id}")]
     public async Task<ActionResult<Partner>> GetPartner(int id)
     {
@@ -36,11 +34,9 @@ public class PartnerController : ControllerBase
         return Ok(partner);
     }
 
-   
     [HttpPost]
     public async Task<ActionResult<Partner>> CreatePartner(Partner partner)
     {
-        // Remove validation for unnecessary fields
         if (!ModelState.IsValid)
         {
             return BadRequest(ModelState);
@@ -50,7 +46,6 @@ public class PartnerController : ControllerBase
         return CreatedAtAction(nameof(GetPartner), new { id = partner.Id }, partner);
     }
 
-   
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdatePartner(int id, Partner partner)
     {
@@ -68,7 +63,6 @@ public class PartnerController : ControllerBase
         return NoContent();
     }
 
-    
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeletePartner(int id)
     {
