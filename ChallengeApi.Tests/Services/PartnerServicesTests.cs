@@ -38,6 +38,7 @@ namespace ChallengeApi.Tests.Services
             var partnerInDb = context.Partners.FirstOrDefault(p => p.Name == "Parque Ibirapuera");
             Assert.NotNull(partnerInDb);
             Assert.Equal("Parque Ibirapuera", partnerInDb.Name);
+            Assert.Equal(1, context.Partners.Count()); 
         }
 
         [Fact]
@@ -60,6 +61,16 @@ namespace ChallengeApi.Tests.Services
 
             Assert.NotNull(result);
             Assert.Equal("Parque Ibirapuera", result.Name);
+        }
+
+        [Fact]
+        public async Task GetPartnerByIdAsync_ShouldReturnNull_WhenPartnerDoesNotExist()
+        {
+            var context = GetInMemoryDbContext();
+            var service = new PartnerService(context);
+
+            var result = await service.GetPartnerByIdAsync(999); 
+            Assert.Null(result);
         }
 
         [Fact]

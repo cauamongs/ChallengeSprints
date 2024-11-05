@@ -1,72 +1,65 @@
-﻿using ChallengeApi.Services;
-using ChallengeApi.Models;
+﻿using ChallengeApi.Models;
+using ChallengeApi.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-[Route("api/[controller]")]
-[ApiController]
-public class PartnerController : ControllerBase
+namespace ChallengeApi.Controllers
 {
-    private readonly IPartnerService _partnerService;
-
-    public PartnerController(IPartnerService partnerService)
+    [ApiController]
+    [Route("api/[controller]")]
+    public class PartnersController : ControllerBase
     {
-        _partnerService = partnerService;
-    }
+        private readonly IPartnerService _partnerService;
 
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<Partner>>> GetPartners()
-    {
-        return Ok(await _partnerService.GetAllPartnersAsync());
-    }
-
-    [HttpGet("{id}")]
-    public async Task<ActionResult<Partner>> GetPartner(int id)
-    {
-        var partner = await _partnerService.GetPartnerByIdAsync(id);
-
-        if (partner == null)
+        public PartnersController(IPartnerService partnerService)
         {
-            return NotFound();
+            _partnerService = partnerService;
         }
 
-        return Ok(partner);
-    }
-
-    [HttpPost]
-    public async Task<ActionResult<Partner>> CreatePartner(Partner partner)
-    {
-        if (!ModelState.IsValid)
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Partner>>> GetAllPartners()
         {
-            return BadRequest(ModelState);
+            
+            var partnersWithOffers = await _partnerService.GetAllPartnersWithOffersAsync();
+
+            return Ok(partnersWithOffers);
         }
 
-        await _partnerService.AddPartnerAsync(partner);
-        return CreatedAtAction(nameof(GetPartner), new { id = partner.Id }, partner);
-    }
-
-    [HttpPut("{id}")]
-    public async Task<IActionResult> UpdatePartner(int id, Partner partner)
-    {
-        if (id != partner.Id)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Partner>> GetPartnerById(int id)
         {
-            return BadRequest();
+            var partner = await _partnerService.GetPartnerByIdAsync(id);
+            if (partner == null)
+            {
+                return NotFound();
+            }
+            return Ok(partner);
         }
 
-        if (!ModelState.IsValid)
+        [HttpPost]
+        public async Task<ActionResult<Partner>> CreatePartner(Partner partner)
         {
-            return BadRequest(ModelState);
+            await _partnerService.AddPartnerAsync(partner);
+            return CreatedAtAction(nameof(GetPartnerById), new { id = partner.Id }, partner);
         }
 
-        await _partnerService.UpdatePartnerAsync(partner);
-        return NoContent();
-    }
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdatePartner(int id, Partner partner)
+        {
+            if (id != partner.Id)
+            {
+                return BadRequest();
+            }
+            await _partnerService.UpdatePartnerAsync(partner);
+            return NoContent();
+        }
 
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> DeletePartner(int id)
-    {
-        await _partnerService.DeletePartnerAsync(id);
-        return NoContent();
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeletePartner(int id)
+        {
+            await _partnerService.DeletePartnerAsync(id);
+            return NoContent();
+        }
     }
 }

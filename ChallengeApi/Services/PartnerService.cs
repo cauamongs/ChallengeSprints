@@ -14,19 +14,22 @@ namespace ChallengeApi.Services
             _context = context;
         }
 
-        public async Task<IEnumerable<Partner>> GetAllPartnersAsync()
+        public async Task<IEnumerable<Partner>> GetAllPartnersWithOffersAsync()
         {
-            return await _context.Partners.Include(p => p.Offers).ToListAsync();
+            
+            return await _context.Partners
+                .Include(p => p.Offers)
+                .ToListAsync();
         }
 
         public async Task<Partner> GetPartnerByIdAsync(int id)
         {
-            return await _context.Partners.Include(p => p.Offers).FirstOrDefaultAsync(p => p.Id == id);
+            return await _context.Partners.FindAsync(id);
         }
 
         public async Task AddPartnerAsync(Partner partner)
         {
-            _context.Partners.Add(partner);
+            await _context.Partners.AddAsync(partner);
             await _context.SaveChangesAsync();
         }
 
