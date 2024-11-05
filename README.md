@@ -62,10 +62,10 @@ O projeto incorpora funcionalidades de IA generativa para fornecer recomendaçõ
 
  ## Instruções para rodar a API:
  
-- **Fazer o Download do arquivo .zip no GitHub.
-- **Extrair o projeto do arquivo .zip.
-- **Abrir o Visual Studio 2022 e em seguida clicar em "abrir um projeto ou uma solução".
-- **Aperte o botão de play em cima no seu editor de código
-- **Para finalizar, faça os testes no swagger
+- Fazer o Download do arquivo .zip no GitHub.
+- Extrair o projeto do arquivo .zip.
+- Abrir o Visual Studio 2022 e em seguida clicar em "abrir um projeto ou uma solução".
+- Aperte o botão de play em cima no seu editor de código
+- Para finalizar, faça os testes no swagger
 
 
