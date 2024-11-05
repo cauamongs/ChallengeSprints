@@ -21,48 +21,26 @@ Escalabilidade e Tamanho do Projeto: Em comparação com a arquitetura de micros
 Desenvolvimento Rápido: O tempo de desenvolvimento em uma arquitetura monolítica é geralmente mais rápido, pois não há necessidade de configurar comunicações entre serviços, o que é comum em microservices. Isso é especialmente importante quando o objetivo é entregar uma aplicação funcional em menos tempo.
 
 
-Exemplo POST no swagger:
+Testes Implementados
+A qualidade do código foi assegurada através da implementação de testes unitários, de integração e de sistema utilizando o xUnit. Os testes cobrem as seguintes funcionalidades:
 
-{
-  "name": " ",
-  
-  "type": " ",
-  
-  "location": " ",
-  
-  "offers": [
-    {
-      "description": " ",
-      
-      "validFrom": "2024-09-10T00:00:00Z",
-      
-      "validTo": "2024-12-31T23:59:59Z"
-    }
-  ]
-}
+Adicionar parceiro: Testa se um novo parceiro é adicionado corretamente ao banco de dados.
+Obter parceiro por ID: Verifica se a busca de um parceiro por ID retorna o parceiro correto.
+Atualizar parceiro: Confirma que as alterações em um parceiro são refletidas no banco de dados.
+Deletar parceiro: Testa se um parceiro é removido corretamente do banco de dados.
+Os testes foram desenvolvidos utilizando um banco de dados em memória para garantir isolamento e rapidez na execução.
 
+Práticas de Clean Code
+Este projeto aplica diversas práticas de Clean Code para garantir um código legível, manutenível e testável, incluindo:
 
-Exemplo PUT (UPDATE) no swagger : 
+Nomes descritivos: Classes, métodos e variáveis têm nomes que refletem suas responsabilidades.
+Responsabilidade única: Cada classe e método é responsável por uma única tarefa, seguindo o princípio da responsabilidade única.
+Estruturas claras: O código está organizado em pastas e arquivos com uma estrutura clara, facilitando a navegação.
+Injeção de dependência: O uso de injeção de dependência melhora a testabilidade e a flexibilidade do código.
 
-{
-  "id": 21,
-  
-  "name": "Merenda da Cidade",
-  
-  "type": "Restaurante",
-  
-  "location": "São Paulo",
-  
-  "offers": [
-    {
-      "id": 21,
-      "description": "Oferta de 10% no primeiro almoço",
-      
-      "validFrom": "2024-09-16T15:42:31.570Z",
-      
-      "validTo": "2024-09-16T15:42:31.570Z",
-      
-      "partnerId": 21
-    }
-  ]
-}
+Funcionalidades de IA Generativa
+O projeto incorpora funcionalidades de IA generativa para fornecer recomendações personalizadas de ofertas aos usuários. As principais características incluem:
+
+Treinamento de modelo: Um modelo de Machine Learning é treinado utilizando dados de ofertas para prever quais ofertas são mais relevantes com base nas informações fornecidas pelo usuário.
+Previsão de ofertas: O sistema utiliza o modelo treinado para gerar recomendações de ofertas com base na descrição e nos atributos de uma nova oferta.
+
