@@ -60,14 +60,12 @@ O projeto incorpora funcionalidades de IA generativa para fornecer recomendaçõ
 - **Treinamento de modelo**: Um modelo de Machine Learning é treinado utilizando dados de ofertas para prever quais ofertas são mais relevantes com base nas informações fornecidas pelo usuário.
 - **Previsão de ofertas**: O sistema utiliza o modelo treinado para gerar recomendações de ofertas com base na descrição e nos atributos de uma nova oferta.
 
-## Como Executar o Projeto
+ ## Instruções para rodar a API:
+ 
+- **Fazer o Download do arquivo .zip no GitHub.
+- **Extrair o projeto do arquivo .zip.
+- **Abrir o Visual Studio 2022 e em seguida clicar em "abrir um projeto ou uma solução".
+- **Aperte o botão de play em cima no seu editor de código
+- **Para finalizar, faça os testes no swagger
 
-Instruções sobre como configurar e executar o projeto localmente (adicione aqui os passos específicos).
 
-## Contribuições
-
-Instruções sobre como contribuir para o projeto (adicione informações sobre como as pessoas podem contribuir).
-
-## Licença
-
-Informações sobre a licença do projeto (adicione detalhes da licença aqui).
